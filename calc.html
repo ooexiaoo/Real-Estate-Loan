@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Equity and Loan Calculator</title>
+</head>
+<body>
+    <h1>Equity and Loan Calculator</h1>
+    
+    <label for="propertyValue">Property Value:</label>
+    <input type="number" id="propertyValue" placeholder="Enter property value" />
+    <button onclick="calculate()">Calculate</button>
+    
+    <p><strong>Equity Price:</strong> $<span id="equityPrice">0</span></p>
+    <p><strong>Loan Amount:</strong> $<span id="loanAmount">0</span></p>
+
+    <script>
+        function calculate() {
+            // Get the property value from the input
+            const propertyValue = parseFloat(document.getElementById('propertyValue').value);
+            
+            // Calculate equity price (20%)
+            const equityPrice = propertyValue * 0.2;
+            
+            // Calculate loan amount (80%)
+            const loanAmount = propertyValue * 0.8;
+            
+            // Display the results
+            document.getElementById('equityPrice').textContent = equityPrice.toFixed(2);
+            document.getElementById('loanAmount').textContent = loanAmount.toFixed(2);
+        }
+    </script>
+</body>
+</html>
