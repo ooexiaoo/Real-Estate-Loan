@@ -220,7 +220,7 @@ footer {
   @media (max-height: 850px) {
     footer {
       padding-top: 50px;
-      position: relative;
+      position: absolute;
       width: 100%;
     }
   }
