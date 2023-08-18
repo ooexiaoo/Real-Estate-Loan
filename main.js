@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Swiper Initialization
   var swiper = new Swiper(".mySwiper", {
-    loop: false, //turning this on is causing slide skipping
+    loop: true, //turning this on is causing slide skipping
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",

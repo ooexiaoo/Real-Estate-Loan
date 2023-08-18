@@ -68,7 +68,7 @@
 .sale {
    /* Sale badge styling */
   background-color: #f45b5b;
-  padding: 20px;
+  padding: 10px;
   border-radius: 80%;
   font-size: 1.5rem;
   font-weight: bold;
@@ -130,7 +130,7 @@
 @media(max-width: 768px){
   .swiper {
     /* Container padding and margin adjustments */
-    padding: 25px;
+    padding: 50px;
     margin: 0;
   }
   .swiper-slide {
@@ -140,7 +140,10 @@
   }
   .swiper-slide img {
     /* Image adjustments */
-    max-height: 400px;
+    max-height: 350px;
     max-width: 100%;
+  }
+  .sale {
+    font-size: 0.8rem;
   }
 }
