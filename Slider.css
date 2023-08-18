@@ -1,52 +1,72 @@
+/* Swiper container */
 .swiper {
+  /* Container positioning and layout */
+  position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
+  height: auto;
+  margin-bottom: 50px;
 }
 
+/* Swiper slide */
 .swiper-slide {
+  /* Slide positioning and layout */
+  align-items: center;
+  justify-content: center;
   display: inline-block;
   background-position: center;
   background-size: cover;
-  max-width: 800px;
-  max-height: 100vh;
+  max-width: 600px;
+  max-height: auto;
 }
 
 .swiper-slide img {
-  height: 90vh;
-  max-width: 800px;
+  /* Image properties */
+  height: 600px;
+  max-width: 600px;
   border-radius: 1rem;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
-
+/* Slide content */
 .slide-content {
+  /* Content positioning and styling */
   position: relative;
   color: white;
 }
 
 .top-content {
+  /* Top content positioning */
   position: absolute;
   top: 20px;
   left: 20px;
 }
 
 .top-content h2 {
+  /* Heading styling */
   font-size: 1.5rem;
   margin: 0;
 }
 
 .description {
+  /* Description styling */
   font-size: 1rem;
   margin-top: 10px;
 }
 
 .right-content {
+   /* Right content positioning */
   position: absolute;
   top: 20px;
   right: 20px;
 }
 
 .sale {
+   /* Sale badge styling */
   background-color: #f45b5b;
   padding: 20px;
   border-radius: 80%;
@@ -55,17 +75,20 @@
 }
 
 .bottom-content {
+  /* Bottom content positioning */
   position: absolute;
   bottom: 20px;
   left: 20px;
 }
 
 .bottom-content p {
+  /* Paragraph styling */
   font-size: 1rem;
   margin: 5px 0;
 }
 
 .learn-more {
+  /* Learn more link styling */
   display: inline-block;
   background-color: #007bff;
   color: white;
@@ -79,6 +102,7 @@
 /* Swiper navigation arrows */
 .swiper-button-next,
 .swiper-button-prev {
+  /* Navigation arrows styling */
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -92,7 +116,7 @@
   justify-content: center;
   cursor: pointer;
   border-radius: 50%;
-  z-index: 10;
+  z-index: 9999;
 }
 
 .swiper-button-next {
@@ -102,17 +126,21 @@
 .swiper-button-prev {
   left: 20px;
 }
+/* Media query for mobile view */
 @media(max-width: 768px){
   .swiper {
-    padding: 10px;
+    /* Container padding and margin adjustments */
+    padding: 25px;
     margin: 0;
   }
   .swiper-slide {
+    /* Slide adjustments */
     width: 100%;
-    height: 100%;
+    height: auto;
   }
   .swiper-slide img {
-    max-height: 90vh;
+    /* Image adjustments */
+    max-height: auto;
     max-width: 100%;
   }
 }

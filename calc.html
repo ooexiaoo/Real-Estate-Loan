@@ -2,12 +2,22 @@
 <html>
 <head>
     <title>Equity and Loan Calculator</title>
+    <link rel="stylesheet" href="calc.css">
 </head>
 <body>
     <h1>Equity and Loan Calculator</h1>
     
     <label for="propertyValue">Property Value:</label>
     <input type="number" id="propertyValue" placeholder="Enter property value" />
+    
+    <label for="equitySlider">Equity Percentage:</label>
+    <input type="range" id="equitySlider" min="0" max="100" value="50" />
+    <p>Equity: <span id="equityValue">50</span>%</p>
+    
+    <label for="loanSlider">Loan Percentage:</label>
+    <input type="range" id="loanSlider" min="0" max="100" value="50" />
+    <p>Loan: <span id="loanValue">50</span>%</p>
+    
     <button onclick="calculate()">Calculate</button>
     
     <p><strong>Equity Price:</strong> $<span id="equityPrice">0</span></p>
@@ -15,19 +25,40 @@
 
     <script>
         function calculate() {
-            // Get the property value from the input
             const propertyValue = parseFloat(document.getElementById('propertyValue').value);
+            const equitySliderValue = parseInt(document.getElementById('equitySlider').value);
             
-            // Calculate equity price (20%)
-            const equityPrice = propertyValue * 0.2;
+            // Calculate equity price (equity percentage * property value / 100)
+            const equityPrice = (equitySliderValue * propertyValue) / 100;
             
-            // Calculate loan amount (80%)
-            const loanAmount = propertyValue * 0.8;
+            // Calculate loan amount (100 - equity percentage) * property value / 100
+            const loanAmount = (100 - equitySliderValue) * propertyValue / 100;
             
             // Display the results
             document.getElementById('equityPrice').textContent = equityPrice.toFixed(2);
             document.getElementById('loanAmount').textContent = loanAmount.toFixed(2);
         }
+        
+        // Update displayed equity and loan percentage values when sliders are changed
+        document.getElementById('equitySlider').addEventListener('input', function () {
+            const equitySliderValue = parseInt(this.value);
+            document.getElementById('equityValue').textContent = equitySliderValue;
+            
+            // Update loan slider value to maintain the combined total of 100%
+            const loanSliderValue = 100 - equitySliderValue;
+            document.getElementById('loanSlider').value = loanSliderValue;
+            document.getElementById('loanValue').textContent = loanSliderValue;
+        });
+        
+        document.getElementById('loanSlider').addEventListener('input', function () {
+            const loanSliderValue = parseInt(this.value);
+            document.getElementById('loanValue').textContent = loanSliderValue;
+            
+            // Update equity slider value to maintain the combined total of 100%
+            const equitySliderValue = 100 - loanSliderValue;
+            document.getElementById('equitySlider').value = equitySliderValue;
+            document.getElementById('equityValue').textContent = equitySliderValue;
+        });
     </script>
 </body>
 </html>
