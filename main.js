@@ -2,6 +2,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Swiper Initialization
   var swiper = new Swiper(".mySwiper", {
+    initialSlide: 2,
+    slidesPerGroup: 1,
+    direction: 'horizontal',
     loop: true, //turning this on is causing slide skipping
     navigation: {
       nextEl: ".swiper-button-next",
@@ -20,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     pagination: {
       el: ".swiper-pagination",
+      type: 'bullets',
+      clickable: true,
+      dynamicBullets: true,
     },
     autoplay: {
       delay: 8000,
