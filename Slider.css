@@ -131,7 +131,7 @@
 @media(max-width: 768px){
   .swiper {
     /* Container padding and margin adjustments */
-    padding: 50px 50px 40px 50px;
+    padding: 60px 60px 40px 60px;
     margin: 0px;
   }
   .swiper-slide {
