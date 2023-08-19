@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerGroup: 1,
     direction: 'horizontal',
     loop: true, //turning this on is causing slide skipping
+    spaceBetween: 50,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
